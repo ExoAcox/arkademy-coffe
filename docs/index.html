@@ -1,1 +1,107 @@
-w
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <img src="logo.png" alt="logo">
+        <span><b>ARKADEMY</b> COFFE SHOP</span>
+        <a href="javascript:void(0)">ADD</a>
+    </div>
+    <div id="main">
+        <div id="topTable">
+            <div id="topNo">No</div>
+            <div id="topCashier">Cashier</div>
+            <div id="topProduct">Product</div>
+            <div id="topCategory">Category</div>
+            <div id="topPrice">Price</div>
+            <div id="topAction">Action</div>
+        </div>
+        <div id="table">
+            <ul class="list">
+                <li>1</li>
+                <li class="xcashier">Pevita Pearce</li>
+                <li class="xproduct">Latte</li>
+                <li class="xcategory">Drink</li>
+                <li class="xprice">Rp. 12000</li>
+                <li><a href="javascript:void(0)">Edit</a> | <a href="javascript:void(0)">Delete</a></li>
+            </ul>
+            <ul class="list">
+                <li>2</li>
+                <li class="xcashier">Raisa Andriana</li>
+                <li class="xproduct">Cake</li>
+                <li class="xcategory">Food</li>
+                <li class="xprice">Rp. 15000</li>
+                <li><a href="javascript:void(0)">Edit</a> | <a href="javascript:void(0)">Delete</a></li>
+            </ul>
+            <ul class="list">
+                <li>3</li>
+                <li class="xcashier">Raisa Andriana</li>
+                <li class="xproduct">Fried Rice</li>
+                <li class="xcategory">Food</li>
+                <li class="xprice">Rp. 30000</li>
+                <li><a href="javascript:void(0)">Edit</a> | <a href="javascript:void(0)">Delete</a></li>
+            </ul>
+            <ul class="list">
+                <li>1</li>
+                <li class="xcashier">Pevita Pearce</li>
+                <li class="xproduct">Gudeg</li>
+                <li class="xcategory">Food</li>
+                <li class="xprice">Rp. 36000</li>
+                <li><a href="javascript:void(0)">Edit</a> | <a href="javascript:void(0)">Delete</a></li>
+            </ul>
+            <ul class="list">
+                <li>1</li>
+                <li class="xcashier">Joko Purwhadi</li>
+                <li class="xproduct">Ice Tea</li>
+                <li class="xcategory">Drink</li>
+                <li class="xprice">Rp. 10000</li>
+                <li><a href="javascript:void(0)">Edit</a> | <a href="javascript:void(0)">Delete</a></li>
+            </ul>
+            <ul class="list">
+                <li>1</li>
+                <li class="xcashier">Anas Arifin</li>
+                <li class="xproduct">Macaron</li>
+                <li class="xcategory">Food</li>
+                <li class="xprice">Rp. 45000</li>
+                <li><a href="javascript:void(0)">Edit</a> | <a href="javascript:void(0)">Delete</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="popup">
+        <form id="form">
+            <label for="cashier">Cashier</label>
+            <input type="text" name="cashier" id="cashier" required pattern="^[a-zA-Z][a-zA-Z ']*[a-zA-Z]$" title="Use a valid name, not number or symbol!">
+            <label for="product">Product</label>
+            <input type="text" name="product" id="product" required pattern="^[a-zA-Z0-9][a-zA-Z0-9 ]*[a-zA-Z0-9]$" title="Use a valid name!">
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                <option value="1">Food</option>
+                <option value="2">Drink</option>
+            </select>
+            <label for="price">Price</label>
+            <input type="number" name="price" id="price" required min="10000"">
+            <input type="hidden" name="id_pro" id="id_pro">
+            <input type="hidden" name="id_cas" id="id_cas">
+            <button type="submit" name="submit" id="change">Change</button>
+            <img src="close.png" alt="close" class="close">
+        </form>
+    </div>
+    <div id="popup-del">
+        <span>Are you sure?</span>
+        <form>
+            <input type="hidden" name="id" id="id_del">
+            <button type="submit">Delete</button>
+        </form>
+        <img src="close.png" alt="close" class="close">
+    </div>
+    <div id="popup-bg"></div>
+    <script src="script.js"></script>
+</body>
+</html>

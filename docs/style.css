@@ -1,0 +1,289 @@
+body {
+    overflow: hidden;
+    margin: 0;
+    background-color: whitesmoke;
+}
+body * {
+    box-sizing: border-box;
+}
+ul {
+    padding-inline-start: 0;
+    list-style-type: none;
+}
+li {
+    margin-bottom: 20px;
+}
+a {
+    text-decoration: none;
+}
+#header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 75px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#header img {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    height: 60px;
+}
+#header span {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    line-height: 75px;
+    font-weight: bold;
+}
+#header span b {
+    color: #00BCD4;
+}
+#header a {
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    width: 100px;
+    height: 45px;
+    top: 50%;
+    right: 100px;
+    padding: 0 10px;
+    transform: translateY(-50%);
+    background-color: #00BCD4;
+    border: 2px solid #00BCD4;
+    border-radius: 10px;
+    line-height: 40px;
+    color: white;
+}
+#header a:hover {
+    background-color: white;
+    color: #00BCD4;
+}
+
+@media screen and (max-width: 1050px) {
+    #header a {
+        right: 10px;
+    }
+    #header img {
+        left: 10px;
+    }
+}
+@media screen and (max-width: 775px) {
+    #header span {
+        display: none;
+    }
+}
+
+#main {
+    width: 90%;
+    min-height: 300px;
+    max-width: 850px;
+    background-color: white;
+    margin: 130px auto;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.list li a:nth-child(1) {
+    color: #00C853;
+}
+.list li a:nth-child(2) {
+    color: #FF1744;
+}
+
+
+
+#popup.show, #popup-del.show {
+    top: 50%;
+}
+
+#popup, #popup-del {
+    position: fixed;
+    z-index: 99;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px;
+    padding: 25px;
+    font-size: 50px;
+    background-color: white;
+    border-radius: 10px;
+    transition: .5s;
+}
+#popup form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10px;
+}
+#popup form * {
+    display: block
+}
+#popup input {
+    width: 100%;
+    height: 40px;
+    padding: 0 7px;
+    grid-column: span 2;
+    justify-self: right;
+    align-self: center;
+    font-size: 20px;
+}
+#popup input:focus {
+    outline: none;
+    border: 2px solid #00BCD4;
+}
+#popup label {
+    grid-column: span 1;
+    justify-self: left;
+    align-self: center;
+    font-size: 25px;
+}
+#popup select {
+    grid-column: span 2;
+    height: 44px;
+    font-size: 20px;
+}
+#popup select:focus {
+    outline: none;
+    border: 2px solid #00BCD4;
+}
+#popup button {
+    grid-column: span 3;
+    height: 40px;
+    width: 130px;
+    justify-self: center;
+    align-self: center;
+    transform: translateY(7px);
+    border-radius: 5px;
+    background-color: #00BCD4;
+    color: white;
+    border: 2px solid #00BCD4;
+}
+#popup button:hover {
+    background-color: white;
+    color: #00BCD4;
+}
+#popup img, #popup-del img {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 30px;
+}
+#popup img:hover, #popup-del img:hover {
+    cursor: pointer;
+}
+
+
+#popup-del {
+    display: grid;
+    grid-column: span 1;
+    width: 350px;
+    height: 200px;
+    justify-items: center;
+    align-items: center;
+}
+#popup-del button {
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #00BCD4;
+    color: white;
+    border: 2px solid #00BCD4;
+    font-size: 20px;
+}
+#popup-del button:hover {
+    background-color: white;
+    color: #00BCD4;
+}
+
+
+
+
+
+/* #popup button, #popup-del button {
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    top: 83%;
+    left: 50%;
+    color: white;
+    background-color: #03A9F4;
+    border: 2px solid #03A9F4;
+    transform: translate(-50%, -50%);
+}
+#popup-del button {
+    top: 70%;
+} */
+/* #popup button:hover, #popup-del button:hover {
+    background-color: white;
+    border: 2px solid #03A9F4;
+    color: #03A9F4;
+} */
+
+#popup-bg {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    top: 0;
+    background-color: black;
+    opacity: 0;
+    transition: .5s opacity;
+}
+#popup-bg.show {
+    opacity: .75;
+    height: 100%;
+}
+
+/* #popup-del form *, #popup-del span, #popup-del a {
+    display: block;
+    position: absolute;
+    margin: auto;
+}
+#popup-del span {
+    font-size: 40px;
+    top: 30%;
+    left: 50%;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+} */
+
+
+#topTable, .list {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    width: 100%;
+    text-align: center;
+}
+#topTable {
+    height: 50px;
+    background-color: #90A4AE;
+    font-size: 20px;
+    border-radius: 10px 10px 0 0;
+}
+#table {
+    font-size: 18px;
+}
+#topTable div {
+    line-height: 50px;
+    color: white;
+}
+#topNo, li:nth-child(1) {
+    grid-column: span 1;
+}
+#topCashier, li:nth-child(2) {
+    grid-column: span 4;
+}
+#topProduct, #topPrice, #topAction, li:nth-child(3), li:nth-child(5), li:nth-child(6) {
+    grid-column: span 3;
+}
+#topCategory, li:nth-child(4) {
+    grid-column: span 2;
+}
+.hide {
+    display: none;
+}
